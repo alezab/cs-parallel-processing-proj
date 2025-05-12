@@ -38,7 +38,7 @@ void fill_rand(std::vector<int> &arr, int min, int max)
 
 int main()
 {
-    // Test 1 dla zbioru o rozmiarze N = 2000
+    // Test 1 dla zbioru o rozmiarze N
     std::vector<int> arr1(N);
     fill_rand(arr1, MIN, MAX);
     double t1 = omp_get_wtime();
@@ -46,7 +46,7 @@ int main()
     double t2 = omp_get_wtime();
     std::cout << "Czas sortowania (n = " << N << "): " << t2 - t1 << " s" << std::endl;
 
-    // Test 2 dla zbioru o rozmiarze M = 2000000
+    // Test 2 dla zbioru o rozmiarze M
     std::vector<int> arr2(M);
     fill_rand(arr2, MIN, MAX);
     double t3 = omp_get_wtime();

@@ -33,7 +33,7 @@ This project demonstrates sequential and parallel implementations for performanc
 Use the provided script to submit jobs to SLURM:
 
 ```bash
-./run_sbatch.sh [seq|par]
+chmod +x ./run_sbatch.sh && ./run_sbatch.sh [seq|par]
 ```
 - `seq`: Runs the sequential version
 - `par`: Runs the parallel version
