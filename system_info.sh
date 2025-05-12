@@ -8,13 +8,16 @@ echo "CPU Model:" $(lscpu | awk -F: '/Model name/ {print $2}' | xargs)
 sockets=$(lscpu | awk -F: '/Socket\(s\)/ {print $2}' | xargs)
 echo "Socket(s):" $sockets
 
+# Liczba logicznych rdzeni na fizyczny rdzeń
+threads_per_core=$(lscpu | awk -F: '/Thread\(s\) per core/ {print $2}' | xargs)
+
 # Liczba fizycznych rdzeni na socket
 cores_per_socket=$(lscpu | awk -F: '/Core\(s\) per socket/ {print $2}' | xargs)
 echo "Core(s) per socket:" $cores_per_socket
 
-# Liczba logicznych rdzeni na fizyczny rdzeń
-threads_per_core=$(lscpu | awk -F: '/Thread\(s\) per core/ {print $2}' | xargs)
-echo "Thread(s) per core:" $threads_per_core
+# Liczba logicznych rdzeni na socket
+threads_per_socket=$((threads_per_core * cores_per_socket))
+echo "Thread(s) per socket:" $threads_per_socket
 
 # Liczba fizycznych rdzeni ogółem
 total_cores=$((cores_per_socket * sockets))
@@ -30,3 +33,4 @@ echo "Total RAM:" $(free -h | grep "Mem:" | awk '{print $2}')
 # System operacyjny
 echo "Distro:" $(cat /etc/os-release | grep "PRETTY_NAME" | awk -F= '{print $2}' | xargs)
 echo "Kernel:" $(uname -r)
+echo "Arch:" $(uname -m)
