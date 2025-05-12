@@ -9,13 +9,16 @@ CXXFLAGS = -fopenmp
 
 all: sequential/seq.out parallel/par.out
 
-sequential: sequential/seq.cpp
+sequential/seq.out: sequential/seq.cpp
 	$(CXX) $(CXXFLAGS) -o sequential/seq.out sequential/seq.cpp
 	@echo "Build sequential program complete."
 
-parallel: parallel/par.cpp
+parallel/par.out: parallel/par.cpp
 	$(CXX) $(CXXFLAGS) -o parallel/par.out parallel/par.cpp
 	@echo "Build parallel program complete."
+
+sequential: sequential/seq.out
+parallel: parallel/par.out
 
 clean:
 	rm -f sequential/seq.out parallel/par.out
