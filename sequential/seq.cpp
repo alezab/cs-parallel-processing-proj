@@ -5,10 +5,10 @@
 #include <omp.h>
 
 // Wartości do testów
-const int N = 2000;       // Rozmiar pierwszego zbioru
-const int M = 500000;     // Rozmiar drugiego zbioru
-const int MIN = 0;        // Minimalna wartość losowanej liczby
-const int MAX = RAND_MAX; // Maksymalna wartość losowanej liczby
+const int N = 2000;      // Rozmiar pierwszego zbioru
+const int M = 500000;    // Rozmiar drugiego zbioru
+const int MIN = 0;       // Minimalna wartość losowanej liczby
+const int MAX = 1000000; // Maksymalna wartość losowanej liczby
 
 void insertion_sort(std::vector<int> &arr)
 {
