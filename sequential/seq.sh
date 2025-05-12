@@ -4,12 +4,12 @@
 #SBATCH --exclusive
 
 #SBATCH -J seq-gr4
-#SBATCH -o slurm/slurm_seq_%j.out
+#SBATCH -o ../slurm_out/slurm_seq_%j.out
 
 # Polecenia do wykonania:
 
 # Informacje o systemie
-source ../system_info.sh
+source ../utils/system_info.sh
 
 # Uruchomienie programu
 echo "Running sequential program..."
