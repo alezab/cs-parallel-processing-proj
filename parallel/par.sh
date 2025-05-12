@@ -4,7 +4,7 @@
 #SBATCH --exclusive
 
 #SBATCH -J par-gr4
-#SBATCH -o slurm/par.txt
+#SBATCH -o slurm/slurm_par_%j.out
 
 # Polecenia do wykonania:
 
