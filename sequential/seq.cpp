@@ -44,7 +44,7 @@ int main()
     double t1 = omp_get_wtime();
     insertion_sort(arr1);
     double t2 = omp_get_wtime();
-    std::cout << "Czas sortowania (N = " << N << "): " << t2 - t1 << " s" << std::endl;
+    std::cout << "Czas sortowania (n = " << N << "): " << t2 - t1 << " s" << std::endl;
 
     // Test 2 dla zbioru o rozmiarze M = 2000000
     std::vector<int> arr2(M);
@@ -52,5 +52,5 @@ int main()
     double t3 = omp_get_wtime();
     insertion_sort(arr2);
     double t4 = omp_get_wtime();
-    std::cout << "Czas sortowania (M = " << M << "): " << t4 - t3 << " s" << std::endl;
+    std::cout << "Czas sortowania (n = " << M << "): " << t4 - t3 << " s" << std::endl;
 }
