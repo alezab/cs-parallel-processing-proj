@@ -1,10 +1,19 @@
 #!/bin/bash
 
+# Zmiana katalogu roboczego na katalog skryptu
+cd "$(dirname "$0")"
+
 # Skompiluj przed uruchomieniem
 make clean && make sequential
 
+# Zmiana katalogu roboczego na katalog sekwencyjny
+cd sequential
+
+# Stworzenie katalogu slurm, jeśli nie istnieje
+mkdir -p slurm
+
 # Odpal skrypt sekwencyjny przez sbatch
-jobid=$(sbatch sequential/seq.sh | awk '{print $4}')
+jobid=$(sbatch seq.sh | awk '{print $4}')
 
 # Wyświetl job ID i użytkownika
 if [ -n "$jobid" ]; then

@@ -4,7 +4,7 @@
 #SBATCH --exclusive
 
 #SBATCH -J seq-gr4
-#SBATCH -o seq.txt
+#SBATCH -o slurm/seq.txt
 
 # Polecenia do wykonania:
 

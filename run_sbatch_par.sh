@@ -1,7 +1,16 @@
 #!/bin/bash
 
+# Zmiana katalogu roboczego na katalog skryptu
+cd "$(dirname "$0")"
+
 # Skompiluj przed uruchomieniem
-make clean && make parallel
+make clean && make sequential
+
+# Zmiana katalogu roboczego na katalog równoległy
+cd parallel
+
+# Stworzenie katalogu slurm, jeśli nie istnieje
+mkdir -p slurm
 
 # Odpal skrypt równoległy przez sbatch
 jobid=$(sbatch parallel/par.sh | awk '{print $4}')
