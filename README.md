@@ -57,6 +57,23 @@ All SLURM output files (e.g., job logs) are stored in the `slurm_out/` directory
 
 ---
 
+## Insertion Sort Algorithm
+
+This project uses the **insertion sort** algorithm in its sequential and parallel implementations. Insertion sort is a simple, comparison-based sorting algorithm that builds the final sorted array one item at a time. It is efficient for small datasets and is often used as a base case in more complex sorting algorithms.
+
+- **Time Complexity:** O(n²). For large datasets, insertion sort is not the most efficient choice, but it can be parallelized on small data fragments for educational purposes.
+- **Data Type:** The algorithm operates on arrays of integers.
+
+**Algorithm Steps:**
+1. Iterate from the second element to the end of the array.
+2. For each element, compare it with the elements before it.
+3. Shift larger elements one position to the right to make space.
+4. Insert the current element into its correct position.
+
+Insertion sort is chosen for its simplicity and ease of parallelization for demonstration purposes.
+
+---
+
 ## Requirements
 - Linux OS
 - SLURM workload manager
