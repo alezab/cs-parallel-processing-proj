@@ -4,7 +4,7 @@
 cd "$(dirname "$0")"
 
 # Skompiluj przed uruchomieniem
-make clean && make sequential
+make clean && make parallel
 
 # Zmiana katalogu roboczego na katalog równoległy
 cd parallel
