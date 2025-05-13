@@ -28,7 +28,7 @@ total_threads=$((total_cores * threads_per_core))
 echo "Thread(s) total:" $total_threads
 
 # Ilość pamięci RAM
-echo "Total RAM:" $(free -h | grep "Mem:" | awk '{print $2}')
+echo "Total RAM:" $(free -h | awk '/^Mem:/ {print $2}')
 
 # System operacyjny
 echo "Distro:" $(cat /etc/os-release | grep "PRETTY_NAME" | awk -F= '{print $2}' | xargs)
