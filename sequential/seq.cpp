@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <random>
-#include <ctime>
 #include <omp.h>
 
 // Wartości do testów
