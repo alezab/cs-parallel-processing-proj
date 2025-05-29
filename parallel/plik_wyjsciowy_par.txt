@@ -1,0 +1,35 @@
+Kompilacja programu...
+Start testow...
+Sortowanie 2000 elementow dla 1 watkow trwalo: 0.002924 sekund
+Sortowanie 500000 elementow dla 1 watkow trwalo: 167.480663 sekund
+
+
+Sortowanie 2000 elementow dla 2 watkow trwalo: 0.002388 sekund
+Sortowanie 500000 elementow dla 2 watkow trwalo: 126.061555 sekund
+
+
+Sortowanie 2000 elementow dla 4 watkow trwalo: 0.002842 sekund
+Sortowanie 500000 elementow dla 4 watkow trwalo: 137.211805 sekund
+
+
+Sortowanie 2000 elementow dla 8 watkow trwalo: 0.003085 sekund
+Sortowanie 500000 elementow dla 8 watkow trwalo: 149.633965 sekund
+
+
+Sortowanie 2000 elementow dla 12 watkow trwalo: 0.003433 sekund
+Sortowanie 500000 elementow dla 12 watkow trwalo: 154.839434 sekund
+
+
+Sortowanie 2000 elementow dla 16 watkow trwalo: 0.003548 sekund
+Sortowanie 500000 elementow dla 16 watkow trwalo: 158.116050 sekund
+
+
+Sortowanie 2000 elementow dla 20 watkow trwalo: 0.003664 sekund
+Sortowanie 500000 elementow dla 20 watkow trwalo: 160.076463 sekund
+
+
+Sortowanie 2000 elementow dla 24 watkow trwalo: 0.005068 sekund
+Sortowanie 500000 elementow dla 24 watkow trwalo: 161.177586 sekund
+
+
+Testy zakonczone.
