@@ -1,31 +1,29 @@
 #!/bin/bash -l
-#SBATCH -p hpc-short
-#SBATCH -N 1
-#SBATCH --exclusive
-
+#SBATCH -p hpc-short 
+#SBATCH -N 1 
+#SBATCH --exclusive 
 #SBATCH -J par-gr4
-#SBATCH -o ../slurm_out/slurm_par_%j.out
+#SBATCH -o plik_wyjsciowy.txt
 
-# Polecenia do wykonania:
+echo "Kompilacja programu..."
+g++ -fopenmp test.c -o rownolegle
 
-# Informacje o systemie
-source ../utils/system_info.sh
+MAX_THREADS=24
 
-# Uruchomienie programu
-MAX_THREADS=$total_cores
+echo "Start testow..."
 
-# Uruchomienie programu co 2 rdzenie
 for i in 1 2 4; do
-    if [ $i -le $MAX_THREADS ]; then
-        echo "Running parallel program with $i thread(s)..."
-        OMP_NUM_THREADS=$i ./par.out
+    if [ "$i" -le "$MAX_THREADS" ]; then
+        OMP_NUM_THREADS=$i ./rownolegle
     fi
 done
 
-# Uruchomienie programu co 4 rdzenie do liczby rdzeni fizycznych
-i=8
-while [ $i -le $MAX_THREADS ]; do
-    echo "Running parallel program with $i thread(s)..."
-    OMP_NUM_THREADS=$i ./par.out
-    i=$((i+4))
-done
+if [ "$MAX_THREADS" -ge 8 ]; then
+    i=8
+    while [ "$i" -le "$MAX_THREADS" ]; do
+	OMP_NUM_THREADS=$i ./rownolegle
+	i=$((i+4))
+    done
+fi
+
+echo "Testy zakonczone."
