@@ -34,3 +34,9 @@ echo "Total RAM:" $(free -h | awk '/^Mem:/ {print $2}')
 echo "Distro:" $(cat /etc/os-release | grep "PRETTY_NAME" | awk -F= '{print $2}' | xargs)
 echo "Kernel:" $(uname -r)
 echo "Arch:" $(uname -m)
+
+# Informacje o wersji g++
+echo $(g++ --version | head -n 1)
+
+# Informacje o wersji SLURM
+echo $(srun --version 2>&1 | head -n 1)

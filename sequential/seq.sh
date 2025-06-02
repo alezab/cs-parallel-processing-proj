@@ -10,6 +10,7 @@
 
 # Informacje o systemie
 source ../utils/system_info.sh
+echo
 
 # Uruchomienie programu
 echo "Running sequential program..."

@@ -1,0 +1,17 @@
+Hostname: hpc15
+CPU Model: Intel(R) Xeon(R) CPU E5-2670 v3 @ 2.30GHz
+Socket(s): 2
+Core(s) per socket: 12
+Thread(s) per core: 2
+Core(s) total: 24
+Thread(s) total: 48
+Total RAM: 125Gi
+Distro: AlmaLinux 8.7 (Stone Smilodon)
+Kernel: 4.18.0-425.13.1.el8_7.x86_64
+Arch: x86_64
+g++ (GCC) 8.5.0 20210514 (Red Hat 8.5.0-20)
+slurm 22.05.5
+
+Running sequential program...
+Czas sortowania (n = 2000): 0.00873766 s
+Czas sortowania (n = 500000): 500.162 s

@@ -1,5 +1,19 @@
-Kompilacja programu...
-Start testow...
+Hostname: hpc46
+CPU Model: Intel(R) Xeon(R) CPU E5-2670 v3 @ 2.30GHz
+Socket(s): 2
+Core(s) per socket: 12
+Thread(s) per core: 2
+Core(s) total: 24
+Thread(s) total: 48
+Total RAM: 125Gi
+Distro: AlmaLinux 8.7 (Stone Smilodon)
+Kernel: 4.18.0-425.13.1.el8_7.x86_64
+Arch: x86_64
+g++ (GCC) 8.5.0 20210514 (Red Hat 8.5.0-20)
+slurm 22.05.5
+
+Start tests...
+
 Sortowanie 2000 elementow dla 1 watkow trwalo: 0.002924 sekund
 Sortowanie 500000 elementow dla 1 watkow trwalo: 167.480663 sekund
 
@@ -32,4 +46,4 @@ Sortowanie 2000 elementow dla 24 watkow trwalo: 0.005068 sekund
 Sortowanie 500000 elementow dla 24 watkow trwalo: 161.177586 sekund
 
 
-Testy zakonczone.
+Tests ended.
