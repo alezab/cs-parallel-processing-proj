@@ -3,8 +3,9 @@
 #include <omp.h>
 #include <time.h>
 
+// Klasyczny insertion sort
 void insertion_sort(int *arr, int left, int right)
-{ // Klasyczny insertion sort
+{
     for (int i = left + 1; i <= right; i++)
     {
         int key = arr[i];
@@ -18,30 +19,39 @@ void insertion_sort(int *arr, int left, int right)
     }
 }
 
+// Przyjmujemy tablice i jej rozmiar
 void parallel_insertion_sort(int *arr, int n)
-{ // Przyjmujemy tablice i jej rozmiar
+{
     int num_threads = omp_get_max_threads();
 
-    int chunk = n / num_threads; // Dzielimy tablice na liczbę wątków jakie mamy udostępnione
+    // Dzielimy tablice na liczbę wątków jakie mamy udostępnione
+    int chunk = n / num_threads;
 
 #pragma omp parallel
     {
         int tid = omp_get_thread_num();
-        int left = tid * chunk; // Wydzielamy dla każdego wątku po jego kawałku
 
-        int right = (tid == num_threads - 1) ? (n - 1) : (left + chunk - 1); // jeśli to ostatni wątek to przydzielamy mu końcówkę, jeśli nie to dalszy chunk
+        // Wydzielamy dla każdego wątku po jego kawałku
+        int left = tid * chunk;
 
+        // Jeśli to ostatni wątek to przydzielamy mu końcówkę, jeśli nie to dalszy chunk
+        int right = (tid == num_threads - 1) ? (n - 1) : (left + chunk - 1);
+
+        // Takie tam sprawdzenie
         if (left <= right)
-        { // Takie tam sprawdzenie
+        {
             insertion_sort(arr, left, right);
         }
     }
 
-    insertion_sort(arr, 0, n - 1); // Na koniec i tak musimy zrobić po całości ułożenie elementów -> Insertion Sort jest anty openMP :(
+    // Na koniec i tak musimy zrobić po całości ułożenie elementów ->
+    // Insertion Sort jest anty openMP :(
+    insertion_sort(arr, 0, n - 1);
 }
 
+// Generacja losowych liczb
 void generate_random_array(int *arr, int size)
-{ // Generacja losowych liczb
+{
 
     for (int i = 0; i < size; ++i)
     {
@@ -55,8 +65,9 @@ int main()
 
     int sizes[] = {2000, 500000};
 
+    // Operacje dla dwóch rodzajów danych dla podanej ilości wątków po kolei
     for (int s = 0; s < sizeof(sizes) / sizeof(sizes[0]); s++)
-    { // Operacje dla dwóch rodzajów danych dla podanej ilości wątków po kolei
+    {
         int size = sizes[s];
         int *array = (int *)malloc(size * sizeof(int));
         if (!array)
